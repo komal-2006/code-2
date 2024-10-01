@@ -3,20 +3,25 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-  int n; 
-  cin>>n;     
-  int a = 1;
-  int b = 1;
-  int curr;
-  if(n==1 || n==2){
-        curr =1;
+ string compareNM(int n, int m){
+        if(n < m){
+            return "lesser";
+        }
+        if(n==m){
+            return "equal";
+        }
+        else{
+            return "greater";
+        }
+    }
+
+int main(){
+int t;
+cin>>t;
+while(t--){
+    int n,m; cin>>n>>m;
+    Solution obj;
+    cout<<obj.compareNM(n,m)<<"\n";
   }
-  for (int i = 3; i <= n; i += 1) {
-        curr = a + b;
-        a = b;
-        b = curr;
-  }
-  cout<<curr<<"\n";
-}       
+return 0;
+}
